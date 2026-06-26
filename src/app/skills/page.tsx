@@ -12,32 +12,21 @@ const CATEGORIES = [
 const SKILLS: Record<string, { name: string; level: number; color: string }[]> = {
   backend: [
     { name: "Laravel", level: 92, color: "#ff6584" },
-    { name: "NestJS", level: 88, color: "#6c63ff" },
-    { name: "Express", level: 90, color: "#6c63ff" },
+    { name: "Java", level: 70, color: "#6c63ff" },
+    { name: "Python", level: 70, color: "#ff6584" },
     { name: "REST APIs", level: 94, color: "#6c63ff" },
-    { name: "GraphQL", level: 78, color: "#ff6584" },
-    { name: "WebSocket", level: 80, color: "#6c63ff" },
   ],
   frontend: [
     { name: "React", level: 88, color: "#6c63ff" },
-    { name: "Next.js", level: 85, color: "#6c63ff" },
-    { name: "TypeScript", level: 87, color: "#6c63ff" },
+    { name: "Next.js", level: 60, color: "#6c63ff" },
     { name: "Tailwind CSS", level: 90, color: "#ff6584" },
-    { name: "React Native", level: 75, color: "#6c63ff" },
-    { name: "Framer Motion", level: 70, color: "#ff6584" },
   ],
   database: [
     { name: "PostgreSQL", level: 85, color: "#6c63ff" },
     { name: "MySQL", level: 82, color: "#6c63ff" },
     { name: "Redis", level: 75, color: "#ff6584" },
-    { name: "MongoDB", level: 72, color: "#6c63ff" },
-    { name: "Prisma", level: 80, color: "#6c63ff" },
   ],
   devops: [
-    { name: "Docker", level: 80, color: "#6c63ff" },
-    { name: "CI/CD", level: 75, color: "#ff6584" },
-    { name: "AWS", level: 70, color: "#ff6584" },
-    { name: "Vercel", level: 90, color: "#6c63ff" },
     { name: "Git", level: 95, color: "#6c63ff" },
   ],
 };

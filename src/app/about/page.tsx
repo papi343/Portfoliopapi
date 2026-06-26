@@ -3,10 +3,10 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 
 const STACK = [
-  "TypeScript · React · React Native pour les frontends modernes",
-  "NestJS · Laravel · Java pour des APIs backend robustes",
-  "Docker · CI/CD · AWS pour une infrastructure fiable",
-  "PostgreSQL · Redis pour des données performantes",
+  "React · Next.js · Tailwind pour des frontends modernes et réactifs",
+  "Laravel · Java · Python pour des architectures backend solides",
+  "PostgreSQL · Redis · MySQL pour des données fiables et performantes",
+  "Git pour la gestion de version et le suivi de projet",
 ];
 
 export default function AboutPage() {
