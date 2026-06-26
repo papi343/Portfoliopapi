@@ -53,9 +53,9 @@ export default function AboutPage() {
             <p className="text-[#8888aa] leading-relaxed text-sm">
               Je crois que les bons logiciels ne se codent pas — ils se conçoivent.
               À chaque système que je touche, je pense en termes de frontières, de contrats
-              et d'évolution long terme. Microservices, architectures event-driven, séparation
-              des domaines — ce ne sont pas des mots à la mode, ce sont des outils que j'explore
-              activement pour construire des choses qui passent à l'échelle.
+              et d’évolution long terme. Microservices, architectures event-driven, séparation
+              des domaines — ce ne sont pas des mots à la mode, ce sont des outils que j’explore
+              activement pour construire des choses qui passent à l’échelle.
             </p>
           </div>
 
@@ -63,11 +63,11 @@ export default function AboutPage() {
           <div>
             <h2 className="text-xs tracking-widest uppercase text-[#4a4a6a] mb-4"
               style={{ fontFamily: "var(--font-mono)" }}>
-              CE QUE J'APPORTE
+              CE QUE J’APPORTE
             </h2>
             <p className="text-[#8888aa] leading-relaxed text-sm mb-6">
               Je construis des solutions fullstack complètes et prêtes pour la production —
-              du schéma de base de données à l'UI déployée. Mon stack couvre :
+              du schéma de base de données à l’UI déployée. Mon stack couvre :
             </p>
             <ul className="space-y-2">
               {STACK.map((item, i) => (
@@ -88,9 +88,9 @@ export default function AboutPage() {
             CURIOSITÉ
           </h2>
           <p className="text-[#8888aa] leading-relaxed text-sm max-w-2xl">
-            Je suis le genre d'ingénieur qui lit des architecture decision records pour le plaisir.
-            Qu'il s'agisse d'un nouveau pattern d'orchestration, d'un outil de distributed tracing
-            ou d'un article sur les algorithmes de consensus — si ça rend les systèmes plus intelligents,
+            Je suis le genre d’ingénieur qui lit des architecture decision records pour le plaisir.
+            Qu’il s’agisse d’un nouveau pattern d’orchestration, d’un outil de distributed tracing
+            ou d’un article sur les algorithmes de consensus — si ça rend les systèmes plus intelligents,
             je veux le comprendre.
           </p>
         </div>
@@ -99,7 +99,7 @@ export default function AboutPage() {
         <div className="border-t border-white/5 pt-6 text-center">
           <p className="text-xs text-[#2a2a45] tracking-widest"
             style={{ fontFamily: "var(--font-mono)" }}>
-            — TOUJOURS EN TRAIN DE CONSTRUIRE. TOUJOURS EN TRAIN D'APPRENDRE. —
+            — TOUJOURS EN TRAIN DE CONSTRUIRE. TOUJOURS EN TRAIN D’APPRENDRE. —
           </p>
         </div>
 

@@ -61,7 +61,7 @@ export default function ProjectsPage() {
         </p>
         <h1 className="font-black text-5xl md:text-7xl leading-tight mb-4"
           style={{ fontFamily: "var(--font-display)" }}>
-          Ce sur quoi<br />j'ai travaillé
+          Ce sur quoi<br />j’ai travaillé
         </h1>
         <p className="text-[#4a4a6a] text-sm mb-12 max-w-xl">
           Une sélection de projets qui mettent en valeur mes compétences et ma passion pour le développement web.

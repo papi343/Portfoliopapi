@@ -75,7 +75,7 @@ export default function ContactPage() {
           Construisons quelque<br />chose ensemble.
         </h1>
         <p className="text-[#4a4a6a] text-sm mb-16 max-w-xl">
-          Un projet en tête, une question ou juste envie d'échanger ? Je suis toujours ouvert à une bonne conversation.
+          Un projet en tête, une question ou juste envie d’échanger ? Je suis toujours ouvert à une bonne conversation.
         </p>
 
         <div className="grid md:grid-cols-2 gap-12">

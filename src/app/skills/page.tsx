@@ -68,7 +68,7 @@ export default function SkillsPage() {
           Mes compétences
         </h1>
         <p className="text-[#4a4a6a] text-sm mb-12 max-w-xl">
-          Un écosystème complet maîtrisé de l'interface au déploiement.
+          Un écosystème complet maîtrisé de l’interface au déploiement.
         </p>
 
         {/* Onglets */}
