@@ -3,54 +3,30 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { ExternalLink } from "lucide-react";
 
-const CATEGORIES = ["Tous", "Web", "Web & Mobile", "API", "Package"];
+const CATEGORIES = ["Tous", "Web"];
 
 const PROJECTS = [
   {
-    title: "App Immobilier",
-    description: "Application de gestion immobilière pour agences et propriétaires. Gestion de biens, contrats, locataires et paiements.",
-    tags: ["Next.js", "NestJS", "PostgreSQL", "Docker"],
+    title: "it-quiz",
+    description: "Une plateforme interactive de quiz pour tester ses compétences en informatique avec un système de score et de chronométrage en temps réel.",
+    tags: ["Laravel", "React", "PostgreSQL"],
     category: "Web",
     demo: "#",
     github: "#",
   },
   {
-    title: "App Tailleurs",
-    description: "Application de gestion clients et mesures pour tailleurs. Suivi des commandes, historique clients, rappels de livraison.",
-    tags: ["React Native", "Laravel", "MySQL"],
-    category: "Web & Mobile",
-    demo: "#",
-    github: "#",
-  },
-  {
-    title: "Musée des Civilisations Noires",
-    description: "Site web pour le Musée des Civilisations Noires. Présentation des collections, événements et visites virtuelles.",
-    tags: ["Next.js", "TypeScript", "Tailwind"],
+    title: "grade manager",
+    description: "Une application complète de gestion académique pour le suivi des notes des étudiants, des classes et la génération de rapports de performance.",
+    tags: ["PHP", "Tailwind", "HTML", "JavaScript"],
     category: "Web",
     demo: "#",
     github: "#",
   },
   {
-    title: "API E-commerce",
-    description: "API REST complète pour plateforme e-commerce avec gestion des produits, commandes, paiements et notifications.",
-    tags: ["NestJS", "PostgreSQL", "Redis", "Stripe"],
-    category: "API",
-    demo: "#",
-    github: "#",
-  },
-  {
-    title: "Dashboard Analytics",
-    description: "Tableau de bord analytique en temps réel avec visualisations de données et rapports exportables.",
-    tags: ["React", "TypeScript", "Chart.js", "WebSocket"],
+    title: "StockSEN",
+    description: "Une solution complète de gestion de stock, d'inventaire et de facturation optimisée pour les commerces locaux.",
+    tags: ["Laravel", "React", "MySQL"],
     category: "Web",
-    demo: "#",
-    github: "#",
-  },
-  {
-    title: "Package NPM Validator",
-    description: "Package NPM de validation de données avec support TypeScript, schemas Zod et messages d'erreur multilingues.",
-    tags: ["TypeScript", "Node.js", "npm"],
-    category: "Package",
     demo: "#",
     github: "#",
   },
