@@ -174,7 +174,7 @@ export default function HomePage() {
       <div className="absolute bottom-0 left-0 right-0 border-t border-white/5 py-3 overflow-hidden">
         <div className="flex gap-16 whitespace-nowrap" style={{ animation: "ticker 25s linear infinite" }}>
           {[...Array(2)].map((_, j) =>
-            ["TOUJOURS EN TRAIN DE CONSTRUIRE", "TOUJOURS EN TRAIN D'APPRENDRE", "TOUJOURS EN TRAIN D'ITÉRER"].map((txt) => (
+            ["TOUJOURS EN TRAIN DE CONSTRUIRE", "TOUJOURS EN TRAIN D’APPRENDRE", "TOUJOURS EN TRAIN D’ITÉRER"].map((txt) => (
               <span key={`${j}-${txt}`} className="text-xs text-[#2a2a45] tracking-widest"
                 style={{ fontFamily: "var(--font-mono)" }}>
                 — {txt}

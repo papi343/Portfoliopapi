@@ -24,7 +24,7 @@ const PROJECTS = [
   },
   {
     title: "StockSEN",
-    description: "Une solution complète de gestion de stock, d'inventaire et de facturation optimisée pour les commerces locaux.",
+    description: "Une solution complète de gestion de stock, d’inventaire et de facturation optimisée pour les commerces locaux.",
     tags: ["Laravel", "React", "MySQL"],
     category: "Web",
     demo: "#",

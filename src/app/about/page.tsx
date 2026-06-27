@@ -59,7 +59,7 @@ export default function AboutPage() {
             </p>
           </div>
 
-          {/* Ce que j'apporte */}
+          {/* Ce que j’apporte */}
           <div>
             <h2 className="text-xs tracking-widest uppercase text-[#4a4a6a] mb-4"
               style={{ fontFamily: "var(--font-mono)" }}>

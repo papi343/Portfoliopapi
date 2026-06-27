@@ -22,18 +22,17 @@ export default function Navbar() {
 
         <Link href="/" className="font-bold text-lg"
           style={{ fontFamily: "var(--font-display)" }}>
-          V. Nom
+          Y. Dabo
         </Link>
 
         {/* Desktop */}
         <div className="hidden md:flex gap-1">
           {LINKS.map(({ href, label }) => (
             <Link key={href} href={href}
-              className={`px-4 py-1.5 rounded-full text-sm transition-all duration-200 ${
-                pathname === href
+              className={`px-4 py-1.5 rounded-full text-sm transition-all duration-200 ${pathname === href
                   ? "bg-[#6c63ff] text-white"
                   : "text-[#4a4a6a] hover:text-white hover:bg-white/5"
-              }`}
+                }`}
               style={{ fontFamily: "var(--font-mono)" }}>
               {label}
             </Link>
@@ -52,9 +51,8 @@ export default function Navbar() {
         <div className="md:hidden border-t border-white/5 bg-[#0a0a12] px-6 py-4 flex flex-col gap-2">
           {LINKS.map(({ href, label }) => (
             <Link key={href} href={href} onClick={() => setOpen(false)}
-              className={`px-4 py-2 rounded-lg text-sm transition-all ${
-                pathname === href ? "bg-[#6c63ff] text-white" : "text-[#4a4a6a] hover:text-white"
-              }`}
+              className={`px-4 py-2 rounded-lg text-sm transition-all ${pathname === href ? "bg-[#6c63ff] text-white" : "text-[#4a4a6a] hover:text-white"
+                }`}
               style={{ fontFamily: "var(--font-mono)" }}>
               {label}
             </Link>

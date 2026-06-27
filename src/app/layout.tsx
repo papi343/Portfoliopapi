@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Space_Mono, DM_Sans } from "next/font/google";
 // Ignore missing type declarations for global CSS imports in this project setup
-// @ts-expect-error: Implicitly has an 'any' type because type declarations for CSS are not present
+// CSS import declarations are handled by globals.d.ts
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 

@@ -45,10 +45,10 @@ export default function ContactPage() {
         setSent(true);
       } else {
         const text = await response.text();
-        setError(text || "Une erreur est survenue lors de l'envoi.");
+        setError(text || "Une erreur est survenue lors de l’envoi.");
       }
     } catch {
-      setError("Impossible de contacter le serveur d'envoi.");
+      setError("Impossible de contacter le serveur d’envoi.");
     } finally {
       setLoading(false);
     }
