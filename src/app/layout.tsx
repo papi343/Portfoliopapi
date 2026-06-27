@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Space_Mono, DM_Sans } from "next/font/google";
-// @ts-ignore: side-effect CSS import type declarations
+// Ignore missing type declarations for global CSS imports in this project setup
+// CSS import declarations are handled by globals.d.ts
 import "./globals.css";
+import Navbar from "@/components/Navbar";
 
 const display = Playfair_Display({
   subsets: ["latin"],
@@ -26,7 +28,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="fr" className={`${display.variable} ${mono.variable} ${body.variable}`}>
-      <body>{children}</body>
+      <body>
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }

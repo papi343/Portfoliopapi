@@ -3,13 +3,13 @@ import { useEffect, useState, useRef } from "react";
 import Link from "next/link";
 import { Link as Linkedin, Mail, Download, ArrowRight } from "lucide-react";
 
-// ✏️ MODIFIE CES DONNÉES AVEC LES TIENNES
+// 
 const ME = {
-  prenom: "Votre",
-  nom: "Nom",
-  email: "votre@email.com",
-  github: "https://github.com",
-  linkedin: "https://linkedin.com",
+  prenom: "Yaya",
+  nom: "Dabo",
+  email: "ydabo1876@gmail.com",
+  github: "https://github.com/papi343",
+  linkedin: "https://www.linkedin.com/in/yaya-dabo-a04041380/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3Bzm3EBZMkSQK0tMetMxgIXQ%3D%3D",
   twitter: "https://twitter.com",
   tagline: "Je conçois et développe des applications modernes alliant performance, design et accessibilité.",
 };
@@ -17,14 +17,14 @@ const ME = {
 const ROLES = [
   "développeur fullstack",
   "architecte backend",
-  "développeur React Native",
+  "développeur React.js",
   "passionné de systèmes",
 ];
 
 const TECHS = [
-  "React", "Next.js", "TypeScript", "NestJS", "Laravel",
-  "Node.js", "PostgreSQL", "Redis", "Docker", "AWS",
-  "GraphQL", "Prisma", "React Native", "Tailwind", "Git",
+  "React", "Next.js", "Laravel",
+  "PostgreSQL", "Redis",
+  "Tailwind", "Git", "mySql", "java", "python",
 ];
 
 export default function HomePage() {
@@ -85,9 +85,8 @@ export default function HomePage() {
           <div className="hidden md:flex gap-1">
             {[["Accueil", "/"], ["À propos", "/about"], ["Compétences", "/skills"], ["Projets", "/projects"], ["Contact", "/contact"]].map(([label, href]) => (
               <Link key={href} href={href}
-                className={`px-4 py-1.5 rounded-full text-sm transition-all duration-200 ${
-                  href === "/" ? "bg-[#6c63ff] text-white" : "text-[#4a4a6a] hover:text-white hover:bg-white/5"
-                }`}
+                className={`px-4 py-1.5 rounded-full text-sm transition-all duration-200 ${href === "/" ? "bg-[#6c63ff] text-white" : "text-[#4a4a6a] hover:text-white hover:bg-white/5"
+                  }`}
                 style={{ fontFamily: "var(--font-mono)" }}>
                 {label}
               </Link>
@@ -159,7 +158,7 @@ export default function HomePage() {
           <span className="text-xs text-[#4a4a6a] tracking-widest uppercase"
             style={{ fontFamily: "var(--font-mono)" }}>SOCIAL</span>
           {[
-            
+
             { href: ME.linkedin, icon: <Linkedin size={17} /> },
             { href: `mailto:${ME.email}`, icon: <Mail size={17} /> },
           ].map((s, i) => (
@@ -175,7 +174,7 @@ export default function HomePage() {
       <div className="absolute bottom-0 left-0 right-0 border-t border-white/5 py-3 overflow-hidden">
         <div className="flex gap-16 whitespace-nowrap" style={{ animation: "ticker 25s linear infinite" }}>
           {[...Array(2)].map((_, j) =>
-            ["TOUJOURS EN TRAIN DE CONSTRUIRE", "TOUJOURS EN TRAIN D'APPRENDRE", "TOUJOURS EN TRAIN D'ITÉRER"].map((txt) => (
+            ["TOUJOURS EN TRAIN DE CONSTRUIRE", "TOUJOURS EN TRAIN D’APPRENDRE", "TOUJOURS EN TRAIN D’ITÉRER"].map((txt) => (
               <span key={`${j}-${txt}`} className="text-xs text-[#2a2a45] tracking-widest"
                 style={{ fontFamily: "var(--font-mono)" }}>
                 — {txt}
