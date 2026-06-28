@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState, useRef } from "react";
 import Link from "next/link";
+import Navbar from "../components/Navbar";
 import { Link as Linkedin, Mail, Download, ArrowRight } from "lucide-react";
 
 // 
@@ -77,30 +78,14 @@ export default function HomePage() {
         style={{ background: "radial-gradient(circle, rgba(255,101,132,0.08) 0%, transparent 70%)" }} />
 
       {/* Navbar */}
-      <nav className="fixed top-0 left-0 right-0 z-50 border-b border-white/5 bg-[#0a0a12]/80 backdrop-blur-md">
-        <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-          <span className="font-bold text-lg" style={{ fontFamily: "var(--font-display)" }}>
-            {ME.prenom[0]}. {ME.nom.split(" ")[0]}
-          </span>
-          <div className="hidden md:flex gap-1">
-            {[["Accueil", "/"], ["À propos", "/about"], ["Compétences", "/skills"], ["Projets", "/projects"], ["Contact", "/contact"]].map(([label, href]) => (
-              <Link key={href} href={href}
-                className={`px-4 py-1.5 rounded-full text-sm transition-all duration-200 ${href === "/" ? "bg-[#6c63ff] text-white" : "text-[#4a4a6a] hover:text-white hover:bg-white/5"
-                  }`}
-                style={{ fontFamily: "var(--font-mono)" }}>
-                {label}
-              </Link>
-            ))}
-          </div>
-        </div>
-      </nav>
+      <Navbar />
 
       {/* Contenu principal */}
       <div className="relative max-w-6xl mx-auto px-6 pt-36 pb-28"
         style={{ opacity: show ? 1 : 0, transform: show ? "translateY(0)" : "translateY(20px)", transition: "all 0.7s ease" }}>
 
         {/* Eyebrow */}
-        <p className="text-[#4a4a6a] text-sm tracking-widest uppercase mb-4"
+        <p className="text-[#4a4a6a] text-xs sm:text-sm tracking-widest uppercase mb-4"
           style={{ fontFamily: "var(--font-mono)" }}>
           SALUT, JE SUIS
         </p>
