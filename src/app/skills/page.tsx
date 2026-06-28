@@ -7,6 +7,7 @@ const CATEGORIES = [
   { id: "frontend", label: "Frontend" },
   { id: "database", label: "Database" },
   { id: "devops", label: "DevOps" },
+  { id: "cms", label: "CMS" },
 ];
 
 const SKILLS: Record<string, { name: string; level: number; color: string }[]> = {
@@ -15,6 +16,9 @@ const SKILLS: Record<string, { name: string; level: number; color: string }[]> =
     { name: "Java", level: 70, color: "#6c63ff" },
     { name: "Python", level: 70, color: "#ff6584" },
     { name: "REST APIs", level: 94, color: "#6c63ff" },
+    { name: "C", level: 70, color: "#ff6584" },
+    { name: "C++", level: 70, color: "#6c63ff" },
+
   ],
   frontend: [
     { name: "React", level: 88, color: "#6c63ff" },
@@ -28,6 +32,9 @@ const SKILLS: Record<string, { name: string; level: number; color: string }[]> =
   ],
   devops: [
     { name: "Git", level: 95, color: "#6c63ff" },
+  ],
+  cms: [
+    { name: "WordPress", level: 80, color: "#ff6584" },
   ],
 };
 

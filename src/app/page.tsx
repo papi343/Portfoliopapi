@@ -25,7 +25,7 @@ const ROLES = [
 const TECHS = [
   "React", "Next.js", "Laravel",
   "PostgreSQL", "Redis",
-  "Tailwind", "Git", "mySql", "java", "python",
+  "Tailwind", "Git", "mySql", "java", "python", "C", "C++", "WordPress",
 ];
 
 export default function HomePage() {
