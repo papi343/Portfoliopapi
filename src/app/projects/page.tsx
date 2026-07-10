@@ -3,6 +3,23 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { ExternalLink } from "lucide-react";
 
+const GithubIcon = ({ size = 14 }: { size?: number }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+    <path d="M9 18c-4.51 2-5-2-7-2" />
+  </svg>
+);
+
 const CATEGORIES = ["Tous", "Web"];
 
 const PROJECTS = [
@@ -27,7 +44,15 @@ const PROJECTS = [
     description: "Une solution complète de gestion de stock, d’inventaire et de facturation optimisée pour les commerces locaux.",
     tags: ["Laravel", "React", "MySQL"],
     category: "Web",
-    demo: "#",
+    demo: "https://front-stock-sen.vercel.app/",
+    github: "#",
+  },
+  {
+    title: "immoAgence",
+    description: "Une plateforme moderne de gestion et de recherche de biens immobiliers (appartements, villas, terrains) avec recherche multicritère et mise en relation.",
+    tags: ["Laravel", "React", "MySQL"],
+    category: "Web",
+    demo: "https://frontimmo-agence.vercel.app/",
     github: "#",
   },
 ];
@@ -84,51 +109,72 @@ export default function ProjectsPage() {
 
         {/* Grille projets */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filtered.map((project, i) => (
-            <div key={i}
-              className="group border border-white/5 bg-white/3 rounded-2xl p-6 hover:border-[#6c63ff]/30 transition-all duration-300 flex flex-col justify-between">
+          {filtered.map((project, i) => {
+            const hasDemo = project.demo && project.demo !== "#";
+            const hasGithub = project.github && project.github !== "#";
 
-              {/* Catégorie */}
-              <div className="flex justify-between items-start mb-4">
-                <span className="text-xs text-[#4a4a6a] border border-white/10 px-3 py-1 rounded-full"
-                  style={{ fontFamily: "var(--font-mono)" }}>
-                  {project.category}
-                </span>
-                <div className="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                  <a href={project.github} target="_blank" rel="noopener noreferrer"
-                    className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center text-[#4a4a6a] hover:text-white hover:border-[#6c63ff]/50 transition-all">
-                    <ExternalLink size={14} />
-                  </a>
-                  <a href={project.demo} target="_blank" rel="noopener noreferrer"
-                    className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center text-[#4a4a6a] hover:text-white hover:border-[#6c63ff]/50 transition-all">
-                    <ExternalLink size={14} />
-                  </a>
+            return (
+              <div key={i}
+                onClick={() => {
+                  if (hasDemo) {
+                    window.open(project.demo, "_blank", "noopener,noreferrer");
+                  }
+                }}
+                className={`group border border-white/5 bg-white/3 rounded-2xl p-6 transition-all duration-300 flex flex-col justify-between ${
+                  hasDemo 
+                    ? "cursor-pointer hover:border-[#6c63ff]/50 hover:bg-white/5 hover:-translate-y-1" 
+                    : "hover:border-[#6c63ff]/30"
+                }`}
+              >
+
+                {/* Catégorie */}
+                <div className="flex justify-between items-start mb-4">
+                  <span className="text-xs text-[#4a4a6a] border border-white/10 px-3 py-1 rounded-full"
+                    style={{ fontFamily: "var(--font-mono)" }}>
+                    {project.category}
+                  </span>
+                  <div className="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200" onClick={(e) => e.stopPropagation()}>
+                    {hasGithub && (
+                      <a href={project.github} target="_blank" rel="noopener noreferrer"
+                        className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center text-[#4a4a6a] hover:text-white hover:border-[#6c63ff]/50 transition-all"
+                        title="Code Source">
+                        <GithubIcon size={14} />
+                      </a>
+                    )}
+                    {hasDemo && (
+                      <a href={project.demo} target="_blank" rel="noopener noreferrer"
+                        className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center text-[#4a4a6a] hover:text-white hover:border-[#6c63ff]/50 transition-all"
+                        title="Voir la démo">
+                        <ExternalLink size={14} />
+                      </a>
+                    )}
+                  </div>
+                </div>
+
+                {/* Titre & description */}
+                <div className="mb-6">
+                  <h3 className="text-white font-bold text-lg mb-2 group-hover:text-[#6c63ff] transition-colors"
+                    style={{ fontFamily: "var(--font-display)" }}>
+                    {project.title}
+                  </h3>
+                  <p className="text-[#4a4a6a] text-sm leading-relaxed">
+                    {project.description}
+                  </p>
+                </div>
+
+                {/* Tags */}
+                <div className="flex flex-wrap gap-2">
+                  {project.tags.map((tag) => (
+                    <span key={tag}
+                      className="text-xs px-2 py-1 rounded-md bg-white/5 text-[#6c63ff] border border-[#6c63ff]/20"
+                      style={{ fontFamily: "var(--font-mono)" }}>
+                      {tag}
+                    </span>
+                  ))}
                 </div>
               </div>
-
-              {/* Titre & description */}
-              <div className="mb-6">
-                <h3 className="text-white font-bold text-lg mb-2"
-                  style={{ fontFamily: "var(--font-display)" }}>
-                  {project.title}
-                </h3>
-                <p className="text-[#4a4a6a] text-sm leading-relaxed">
-                  {project.description}
-                </p>
-              </div>
-
-              {/* Tags */}
-              <div className="flex flex-wrap gap-2">
-                {project.tags.map((tag) => (
-                  <span key={tag}
-                    className="text-xs px-2 py-1 rounded-md bg-white/5 text-[#6c63ff] border border-[#6c63ff]/20"
-                    style={{ fontFamily: "var(--font-mono)" }}>
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Navigation suivante */}
