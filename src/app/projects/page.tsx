@@ -144,47 +144,6 @@ export default function ProjectsPage() {
                     style={{ fontFamily: "var(--font-mono)" }}>
                     {project.category}
                   </span>
-                  <div className="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200" onClick={(e) => e.stopPropagation()}>
-                    {hasGithub && (
-                      typeof project.github === "string" ? (
-                        <a href={project.github} target="_blank" rel="noopener noreferrer"
-                          className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center text-[#4a4a6a] hover:text-white hover:border-[#6c63ff]/50 transition-all"
-                          title="Code Source">
-                          <GithubIcon size={14} />
-                        </a>
-                      ) : (
-                        <div className="flex gap-2">
-                          {githubObj?.frontend && (
-                            <a href={githubObj.frontend} target="_blank" rel="noopener noreferrer"
-                              className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center text-[#4a4a6a] hover:text-white hover:border-[#6c63ff]/50 transition-all relative group/tooltip"
-                              title="Code Source (Frontend)">
-                              <GithubIcon size={14} />
-                              <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 bg-black/80 text-white text-[9px] px-1.5 py-0.5 rounded opacity-0 group-hover/tooltip:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">
-                                Front
-                              </span>
-                            </a>
-                          )}
-                          {githubObj?.backend && (
-                            <a href={githubObj.backend} target="_blank" rel="noopener noreferrer"
-                              className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center text-[#4a4a6a] hover:text-white hover:border-[#6c63ff]/50 transition-all relative group/tooltip"
-                              title="Code Source (Backend)">
-                              <GithubIcon size={14} />
-                              <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 bg-black/80 text-white text-[9px] px-1.5 py-0.5 rounded opacity-0 group-hover/tooltip:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">
-                                Back
-                              </span>
-                            </a>
-                          )}
-                        </div>
-                      )
-                    )}
-                    {hasDemo && (
-                      <a href={project.demo} target="_blank" rel="noopener noreferrer"
-                        className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center text-[#4a4a6a] hover:text-white hover:border-[#6c63ff]/50 transition-all"
-                        title="Voir la démo">
-                        <ExternalLink size={14} />
-                      </a>
-                    )}
-                  </div>
                 </div>
 
                 {/* Titre & description */}
@@ -199,7 +158,7 @@ export default function ProjectsPage() {
                 </div>
 
                 {/* Tags */}
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 mb-6">
                   {project.tags.map((tag) => (
                     <span key={tag}
                       className="text-xs px-2 py-1 rounded-md bg-white/5 text-[#6c63ff] border border-[#6c63ff]/20"
@@ -207,6 +166,51 @@ export default function ProjectsPage() {
                       {tag}
                     </span>
                   ))}
+                </div>
+
+                {/* Actions & Code Links (Always Visible) */}
+                <div className="mt-auto pt-5 border-t border-white/5 flex flex-wrap items-center justify-between gap-3"
+                  onClick={(e) => e.stopPropagation()}>
+                  <div className="flex flex-wrap gap-2">
+                    {hasGithub && (
+                      typeof project.github === "string" ? (
+                        <a href={project.github} target="_blank" rel="noopener noreferrer"
+                          className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-white/10 text-xs text-[#8c8cb0] hover:text-white hover:border-[#6c63ff]/50 hover:bg-[#6c63ff]/10 transition-all font-mono"
+                          title="Code Source">
+                          <GithubIcon size={12} />
+                          <span>Code</span>
+                        </a>
+                      ) : (
+                        <div className="flex gap-2">
+                          {githubObj?.frontend && (
+                            <a href={githubObj.frontend} target="_blank" rel="noopener noreferrer"
+                              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-white/10 text-xs text-[#8c8cb0] hover:text-white hover:border-[#6c63ff]/50 hover:bg-[#6c63ff]/10 transition-all font-mono"
+                              title="Code Source (Frontend)">
+                              <GithubIcon size={12} />
+                              <span>Front</span>
+                            </a>
+                          )}
+                          {githubObj?.backend && (
+                            <a href={githubObj.backend} target="_blank" rel="noopener noreferrer"
+                              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-white/10 text-xs text-[#8c8cb0] hover:text-white hover:border-[#ff6584]/50 hover:bg-[#ff6584]/10 transition-all font-mono"
+                              title="Code Source (Backend)">
+                              <GithubIcon size={12} />
+                              <span>Back</span>
+                            </a>
+                          )}
+                        </div>
+                      )
+                    )}
+                  </div>
+
+                  {hasDemo && (
+                    <a href={project.demo} target="_blank" rel="noopener noreferrer"
+                      className="flex items-center gap-1.5 px-3 py-1.5 bg-[#6c63ff] hover:bg-[#5a52e0] text-white rounded-lg text-xs font-mono font-bold transition-all"
+                      title="Voir la démo">
+                      <ExternalLink size={12} />
+                      <span>Démo</span>
+                    </a>
+                  )}
                 </div>
               </div>
             );
