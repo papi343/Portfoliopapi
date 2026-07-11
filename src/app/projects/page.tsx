@@ -45,7 +45,10 @@ const PROJECTS = [
     tags: ["Laravel", "React", "MySQL"],
     category: "Web",
     demo: "https://front-stock-sen.vercel.app/",
-    github: "#",
+    github: {
+      frontend: "https://github.com/papi343/FrontStockSen",
+      backend: "https://github.com/papi343/StockSen",
+    },
   },
   {
     title: "immoAgence",
@@ -53,7 +56,10 @@ const PROJECTS = [
     tags: ["Laravel", "React", "MySQL"],
     category: "Web",
     demo: "https://frontimmo-agence.vercel.app/",
-    github: "#",
+    github: {
+      frontend: "https://github.com/papi343/frontimmo-agence",
+      backend: "https://github.com/papi343/immo-agence",
+    },
   },
 ];
 
@@ -111,7 +117,12 @@ export default function ProjectsPage() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filtered.map((project, i) => {
             const hasDemo = project.demo && project.demo !== "#";
-            const hasGithub = project.github && project.github !== "#";
+            const githubObj = typeof project.github === "object" ? project.github : null;
+            const hasGithub = project.github && (
+              typeof project.github === "string"
+                ? project.github !== "#"
+                : !!(githubObj?.frontend || githubObj?.backend)
+            );
 
             return (
               <div key={i}
@@ -135,11 +146,36 @@ export default function ProjectsPage() {
                   </span>
                   <div className="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200" onClick={(e) => e.stopPropagation()}>
                     {hasGithub && (
-                      <a href={project.github} target="_blank" rel="noopener noreferrer"
-                        className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center text-[#4a4a6a] hover:text-white hover:border-[#6c63ff]/50 transition-all"
-                        title="Code Source">
-                        <GithubIcon size={14} />
-                      </a>
+                      typeof project.github === "string" ? (
+                        <a href={project.github} target="_blank" rel="noopener noreferrer"
+                          className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center text-[#4a4a6a] hover:text-white hover:border-[#6c63ff]/50 transition-all"
+                          title="Code Source">
+                          <GithubIcon size={14} />
+                        </a>
+                      ) : (
+                        <div className="flex gap-2">
+                          {githubObj?.frontend && (
+                            <a href={githubObj.frontend} target="_blank" rel="noopener noreferrer"
+                              className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center text-[#4a4a6a] hover:text-white hover:border-[#6c63ff]/50 transition-all relative group/tooltip"
+                              title="Code Source (Frontend)">
+                              <GithubIcon size={14} />
+                              <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 bg-black/80 text-white text-[9px] px-1.5 py-0.5 rounded opacity-0 group-hover/tooltip:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">
+                                Front
+                              </span>
+                            </a>
+                          )}
+                          {githubObj?.backend && (
+                            <a href={githubObj.backend} target="_blank" rel="noopener noreferrer"
+                              className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center text-[#4a4a6a] hover:text-white hover:border-[#6c63ff]/50 transition-all relative group/tooltip"
+                              title="Code Source (Backend)">
+                              <GithubIcon size={14} />
+                              <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 bg-black/80 text-white text-[9px] px-1.5 py-0.5 rounded opacity-0 group-hover/tooltip:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">
+                                Back
+                              </span>
+                            </a>
+                          )}
+                        </div>
+                      )
                     )}
                     {hasDemo && (
                       <a href={project.demo} target="_blank" rel="noopener noreferrer"
