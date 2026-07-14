@@ -131,7 +131,7 @@ export default function HomePage() {
             style={{ fontFamily: "var(--font-mono)" }}>
             Me contacter
           </Link>
-          <a href="#" download
+          <a href="/cv.pdf" download="CV_Yaya_Dabo.pdf"
             className="flex items-center gap-2 px-6 py-3 border border-white/10 hover:border-[#ff6584]/50 text-[#4a4a6a] hover:text-white rounded-full text-sm transition-all duration-200"
             style={{ fontFamily: "var(--font-mono)" }}>
             <Download size={13} /> Télécharger CV
